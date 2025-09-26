@@ -11,6 +11,14 @@ const prettierConfig = {
   htmlWhitespaceSensitivity: 'ignore',
   endOfLine: 'lf',
   singleAttributePerLine: false,
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  tailwindStylesheet: "./src/main.css",
+  overrides: [
+    {
+      files: '*.astro',
+      options: { parser: 'astro' },
+    },
+  ],
 };
 
 export default prettierConfig;

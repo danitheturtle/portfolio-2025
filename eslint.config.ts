@@ -2,20 +2,21 @@ import eslintConfig from '@eslint/js';
 import tslint from 'typescript-eslint';
 import globals from 'globals';
 //Plugins
-import importPlugin from 'eslint-plugin-import';
-import nodePlugin from 'eslint-plugin-n';
+import { importX as importPlugin } from 'eslint-plugin-import-x';
 import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
+import astroPlugin from 'eslint-plugin-astro';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 
 export default [
-  {},
   eslintConfig.configs.recommended,
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
   hooksPlugin.configs['recommended-latest'],
-  nodePlugin.configs['flat/recommended-script'],
-  importPlugin.flatConfigs.errors,
+  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.typescript,
+  ...astroPlugin.configs.recommended,
   prettierPlugin,
   {
     ignores: ['**/dist/**', '**/node_modules/**'],
@@ -36,9 +37,12 @@ export default [
       },
     },
     settings: {
-      'import/resolver': {
-        typescript: true,
-      },
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        }),
+      ],
       react: {
         version: 'detect',
       },
@@ -46,7 +50,7 @@ export default [
     rules: {
       //Custom rules here:
       '@typescript-eslint/no-explicit-any': 'warn',
-      'no-debugger': 'warn',
+      'no-debugger': 'warn'
     },
   },
 ];
