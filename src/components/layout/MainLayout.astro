@@ -1,0 +1,16 @@
+---
+import '@/styles/main.css';
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta name='color-scheme' content="dark light" />
+    <slot name='head' />
+  </head>
+  <body class='surface'>
+    <div class='mx-auto max-w-6xl'>
+      <slot />
+    </div>
+  </body>
+</html>

@@ -3,11 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { fileURLToPath } from 'url';
 
-export const makeConfig = ({
-  dirname,
-}: {
-  dirname: string;
-}): UserConfig => {
+export const makeConfig = ({ dirname }: { dirname: string }): UserConfig => {
   return {
     cacheDir: '../node_modules/.vite',
     root: dirname,
@@ -23,6 +19,4 @@ export const makeConfig = ({
     },
   };
 };
-export default defineConfig(
-  makeConfig({ dirname: './' })
-);
+export default defineConfig(makeConfig({ dirname: './' }));

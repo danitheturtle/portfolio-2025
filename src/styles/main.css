@@ -1,0 +1,8 @@
+@import './tailwind.css';
+
+
+@layer components {
+  .surface {
+    @apply bg-grey-50 dark:bg-black;
+  }
+}

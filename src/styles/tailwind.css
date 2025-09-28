@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@custom-variant dark {
+  &:where(html:has(#auto-theme-radio:checked) *) {
+    @media (prefers-color-scheme: dark) {
+      @slot;
+    }
+  }
+  &:where(html:has(#dark-theme-radio:checked) *) {
+    @slot;
+  }
+}
+
+@custom-variant rose {
+  &:where(html:has(#rose-theme-radio:checked) *) {
+    @slot;
+  }
+}
+
+@theme {
+  --font-sans:
+    'Arial', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: normal;
+  --text-xs--letter-spacing: normal;
+  --text-xs--font-weight: 500;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: normal;
+  --text-sm--letter-spacing: normal;
+  --text-sm--font-weight: 500;
+  --text-md: 0.875rem;
+  --text-md--line-height: 130%;
+  --text-md--letter-spacing: normal;
+  --text-md--font-weight: 400;
+  --text-base: 1rem;
+
+  /* Colors */
+  --color-white: oklch(0.995 0.001 106.423);
+  --color-grey-50: oklch(0.985 0.001 106.423);
+  --color-grey-100: oklch(0.97 0.001 106.424);
+  --color-grey-200: oklch(0.923 0.003 48.717);
+  --color-grey-300: oklch(0.869 0.005 56.366);
+  --color-grey-400: oklch(0.709 0.01 56.259);
+  --color-grey-500: oklch(0.553 0.013 58.071);
+  --color-grey-600: oklch(0.444 0.011 73.639);
+  --color-grey-700: oklch(0.374 0.01 67.558);
+  --color-grey-800: oklch(0.268 0.007 34.298);
+  --color-grey-900: oklch(0.216 0.006 56.043);
+  --color-grey-950: oklch(0.147 0.004 49.25);
+  --color-black: oklch(0 0 0);
+}

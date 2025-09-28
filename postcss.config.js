@@ -5,7 +5,7 @@ export default {
       stage: 2,
       enableClientSidePolyfills: false,
       features: {
-        'custom-selectors': true
+        'custom-selectors': true,
       },
     },
   },
