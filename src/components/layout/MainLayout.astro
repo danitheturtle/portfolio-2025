@@ -1,4 +1,5 @@
 ---
+import ThemeSelector from '../ThemeSelector.astro';
 import '@/styles/main.css';
 ---
 
@@ -8,8 +9,9 @@ import '@/styles/main.css';
     <meta name='color-scheme' content="dark light" />
     <slot name='head' />
   </head>
-  <body class='surface'>
-    <div class='mx-auto max-w-6xl'>
+  <body class='themeRoot surface'>
+    <div class='mx-auto max-w-8xl'>
+      <ThemeSelector />
       <slot />
     </div>
   </body>

@@ -1,29 +1,9 @@
 ---
-import { Button } from '@/components/core';
+import Button from '@/components/Button.astro';
 import MainLayout from '@/components/layout/MainLayout.astro';
 ---
 
 <MainLayout>
-  <div class='testClass'>
-    <radio-picker role='radiogroup' id='theme-picker'>
-      <label>
-        <input type='radio' name='theme_picker' id='auto-theme-radio' checked />
-        auto
-      </label>
-      <label>
-        <input type='radio' name='theme_picker' id='light-theme-radio' />
-        light
-      </label>
-      <label>
-        <input type='radio' name='theme_picker' id='dark-theme-radio' />
-        dark
-      </label>
-      <label>
-        <input type='radio' name='theme_picker' id='rose-theme-radio' />
-        rose
-      </label>
-    </radio-picker>
-  </div>
   <h1 class='rose:text-rose-300 text-red-500 dark:text-blue-500'>
     Hello, World!
   </h1>

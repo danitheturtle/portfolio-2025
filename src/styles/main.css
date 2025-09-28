@@ -1,8 +1,30 @@
 @import './tailwind.css';
 
+@layer theme {
+  .themeRoot {
+    --color-primary: var(--color-red-600);
+    --color-surface: var(--color-white);
+    --color-text: var(--color-black);
+
+    @variant rose {
+      --color-text: oklch(0.25 0.1379 347.29);
+      --color-surface: var(--color-rose-100);
+    }
+    @variant dark {
+      --color-text: var(--color-grey-50);
+      --color-surface: var(--color-black);
+    }
+  }
+}
 
 @layer components {
+  .text {
+    color: var(--color-text);
+  }
+  .btn {
+    @apply rounded-lg px-6 py-3 text-center align-middle font-sans text-xs;
+  }
   .surface {
-    @apply bg-grey-50 dark:bg-black;
+    background-color: var(--color-surface);
   }
 }

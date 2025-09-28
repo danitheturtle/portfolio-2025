@@ -19,7 +19,4 @@ export default defineConfig({
     port: parseInt(uiPort ?? '8080'),
   },
   vite: makeConfig({ dirname: './' }) as ViteUserConfig,
-  build: {
-    inlineStylesheets: 'never'
-  }
 });
