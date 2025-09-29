@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Custom themes, dependent upon the ThemeSelector component. Works without JS */
+/* Custom themes. Works without JS */
 @custom-variant dark {
   &:where(:has(#auto-theme-radio:checked) *) {
     @media (prefers-color-scheme: dark) {
@@ -12,8 +12,8 @@
   }
 }
 
-@custom-variant rose {
-  &:where(:has(#rose-theme-radio:checked) *) {
+@custom-variant custom-theme {
+  &:where(:has(#custom-theme-radio:checked) *) {
     @slot;
   }
 }
