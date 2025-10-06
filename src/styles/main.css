@@ -2,17 +2,17 @@
 
 @layer theme {
   .themeRoot {
-    --color-primary: var(--color-red-600);
-    --color-surface: var(--color-white);
-    --color-text: var(--color-black);
-
     @variant rose {
       --color-text: oklch(0.25 0.1379 347.29);
+      --color-text-lighten-1: oklch(0.30 0.1379 347.29);
+      --color-text-lighten-2: oklch(0.35 0.1379 347.29);
       --color-surface: var(--color-rose-100);
     }
     @variant dark {
       --color-text: var(--color-grey-50);
-      --color-surface: var(--color-black);
+      --color-text-lighten-1: var(--color-grey-300);
+      --color-text-lighten-2: var(--color-grey-400);
+      --color-surface: var(--color-grey-800);
     }
 
     color: var(--color-text);
@@ -21,29 +21,67 @@
 
 @layer base {
   :root {
+    font-size: var(--text-base);
+    letter-spacing: var(--text-base--letter-spacing);
+    font-weight: var(--text-base--font-weight);
     line-height: 1;
   }
 
-  p {
-    font-size: var(--text-base);
+  ul {
+    @apply list-disc pl-6;
   }
+
+  p,li {
+    @apply text-lg;
+  }
+
+  li {
+    @apply mt-1;
+  }
+
   h1 {
-    font-size: var(--text-9xl);
+    @apply text-8xl;
+    @variant 6xl {
+      @apply text-10xl;
+    }
   }
+
   h2 {
-    font-size: var(--text-8xl);
+    @apply text-primary mb-1 mt-4 text-6xl font-bold;
   }
+
   h3 {
-    font-size: var(--text-7xl);
+    @apply text-4xl font-bold;
   }
+
   h4 {
-    font-size: var(--text-6xl);
+    @apply text-5xl;
+    @variant 6xl {
+      @apply text-7xl;
+    }
   }
+
   h5 {
-    font-size: var(--text-5xl);
+    @apply text-4xl;
+    @variant 6xl {
+      @apply text-6xl;
+    }
   }
+
   h6 {
-    font-size: var(--text-4xl);
+    @apply text-3xl;
+    @variant 6xl {
+      @apply text-5xl;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1;
   }
 }
 

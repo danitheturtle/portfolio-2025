@@ -23,44 +23,13 @@
     'Arial', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  /* breakpoints and container sizes */
-  --container-3xs: 16rem;
-  --container-2xs: 18rem;
-  --container-xs: 20rem;
-  --container-sm: 24rem; /* targets mobile below this size */
-  --container-md: 28rem;
-  --container-lg: 32rem;
-
-  /* breakpoints and container sizes */
-  --container-3xs: 16rem;
-  --container-2xs: 18rem;
-  --container-xs: 20rem;
-  --container-sm: 24rem;
-  --container-md: 28rem;
-  --container-lg: 32rem;
-  --container-xl: 36rem;
-  --container-2xl: 42rem;
-  --container-3xl: 48rem;
-  --container-4xl: 56rem;
-  --container-5xl: 64rem;
-  --container-6xl: 72rem;
-  --container-7xl: 80rem;
-  --container-xl: 36rem;
-  --container-2xl: 42rem;
-  --container-3xl: 48rem;
-  --container-4xl: 56rem;
-  --container-5xl: 64rem;
-  --container-6xl: 72rem;
-  --container-7xl: 80rem;
-  --container-8xl: 128rem;
-
   /* Font sizes */
   --text-xs: 0.6875rem; /* 11 */
-  --text-xs--line-height: 122.5%;
+  --text-xs--line-height: 120%;
   --text-xs--letter-spacing: 0.04rem;
   --text-xs--font-weight: 400;
   --text-sm: 0.75rem; /* 12 */
-  --text-sm--line-height: 120%;
+  --text-sm--line-height: 117.5%;
   --text-sm--letter-spacing: 0.035rem;
   --text-sm--font-weight: 400;
   --text-md: 0.875rem; /* 14 */
@@ -72,11 +41,11 @@
   --text-base--letter-spacing: 0.01rem;
   --text-base--font-weight: 400;
   --text-lg: 1.125rem; /* 18 */
-  --text-lg--line-height: 120%;
+  --text-lg--line-height: 130%;
   --text-lg--letter-spacing: 0.01rem;
   --text-lg--font-weight: 400;
   --text-xl: 1.25rem; /* 20 */
-  --text-xl--line-height: 120%;
+  --text-xl--line-height: 130%;
   --text-xl--letter-spacing: 0.01rem;
   --text-xl--font-weight: 400;
   --text-2xl: 1.375rem; /* 22 */
@@ -111,6 +80,10 @@
   --text-9xl--line-height: 100%;
   --text-9xl--letter-spacing: 0.01rem;
   --text-9xl--font-weight: 400;
+  --text-10xl: 5.5rem; /* 88 */
+  --text-10xl--line-height: 100%;
+  --text-10xl--letter-spacing: 0.01rem;
+  --text-10xl--font-weight: 400;
 
   /* Colors */
   --color-white: oklch(0.995 0.001 106.423);
@@ -126,4 +99,52 @@
   --color-grey-900: oklch(0.216 0.006 56.043);
   --color-grey-950: oklch(0.147 0.004 49.25);
   --color-black: oklch(0 0 0);
+
+  /* Custom theme colors */
+  --color-primary: var(--color-red-500);
+  --color-on-primary: var(--color-grey-50);
+  --color-surface: var(--color-white);
+  --color-text: var(--color-grey-950);
+  --color-text-lighten-1: var(--color-grey-600);
+  --color-text-lighten-2: var(--color-grey-500);
+
+  /* breakpoints and container sizes */
+  --container-3xs: 24rem; /* 384 - most phones above this */
+  --container-2xs: 32rem;
+  --container-xs: 40rem;
+  --container-sm: 48rem; /* 768 - most tablets above this */
+  --container-md: 56rem; 
+  --container-lg: 64rem;
+  --container-xl: 72rem; /* 1152 - most laptops above this*/
+  --container-2xl: 80rem; 
+  --container-3xl: 88rem;
+  --container-4xl: 96rem;
+  --container-5xl: 104rem;
+  --container-6xl: 112rem; /* 1792 - most desktops above this */
+  --container-7xl: 120rem;
+  --container-8xl: 128rem; /* 2048, above this is definitely high resolution monitor */
+}
+
+@custom-variant sm {
+  @media (min-width: 48rem) {
+    @slot;
+  }
+}
+
+@custom-variant xl {
+  @media (min-width: 72rem) {
+    @slot;
+  }
+}
+
+@custom-variant 6xl {
+  @media (min-width: 112rem) {
+    @slot;
+  }
+}
+
+@custom-variant 8xl {
+  @media (min-width: 128rem) {
+    @slot;
+  }
 }

@@ -1,0 +1,215 @@
+---
+import ArticleLayout from '@/components/layout/ArticleLayout.astro';
+const resume = {
+  name: 'Dani T',
+  position: 'Software Engineer',
+  stats: [
+    { label: 'Location', value: 'Ottawa, ON' },
+    {
+      label: 'Email',
+      value: 'dani.develops@pm.me',
+      href: 'mailto:dani.develops@pm.me',
+    },
+    {
+      label: 'Github',
+      value: 'github.com/danitheturtle',
+      href: 'https://www.github.com/danitheturtle',
+    },
+    {
+      label: 'LinkedIn',
+      value: 'linkedin.com/in/danidevelops/',
+      href: 'https://www.linkedin.com/in/danidevelops/',
+    },
+  ],
+  summary:
+    'Seasoned full-stack engineer with a proven track record delivering critical features for top tier companies.' +
+    ' Expertise in React, Vue, Angular, Agile methodologies and cross-functional collaboration. Led numerous' +
+    ' overhauls of legacy codebases, showcasing problem-solving prowess, technical acumen and product development' +
+    ' strategy. Drove significant cost savings and improved user experiences across multiple projects. Known for' +
+    ' effective teamwork and communication, with key skills in UI/UX development and systems architecture.',
+  skillsTitle: 'Skills',
+  skills: [
+    {
+      label: 'Languages',
+      value: 'JavaScript, TypeScript, HTML5, CSS3, Python, C#, Java, SQL',
+    },
+    {
+      label: 'Tools and Frameworks',
+      value:
+        'React, Node.js, Docker, Angular, Vue, Vuetify, Redux, Express, Vite, Webpack, PostCSS, Sass, Tailwind, Tanstack, Astro, MaterialUI, Nginx, Spring, Next.js, PostgreSQL, MySQL, Git, Azure, AWS',
+    },
+    {
+      label: 'Skills and Methodologies',
+      value:
+        'Agile/Scrum, Test Driven Development (TDD), Continuous Integration and Development (CI/CD), UI/UX Design, Project Planning, Time Management and Prioritization, Systems Architecture, Technical Writing, "Vibe Coding" Cleanup',
+    },
+  ],
+  experienceTitle: 'Professional Experience',
+  experience: [
+    {
+      job: 'Software Engineer',
+      company: 'ZeroTier',
+      timeline: ['July 2023', 'September 2025 (2 years 3 months)'],
+      achievements: [
+        "Spearheaded greenfield rebuild of ZeroTier's legacy SaaS product using Vue, Vuetify, and SASS with a critical focus on relationship-based access control (ReBAC).",
+        'Led development of a Vuetify component library.',
+        'Integrated React Query into legacy code base, deprecating bloated Redux state and improving frontend performance by 29%.',
+        'Added cross-app product analytics using PostHog and Google Analytics that uncovered a 2% conversion rate, helping pivot company strategic focus to user onboarding.',
+        'Retrofitted Gatsby.js marketing site to use self-hosted Strapi CMS, saving $3600 per year.',
+        'Partnered with Product Manager and Designer in strategic and tactical product planning.',
+      ],
+    },
+    {
+      job: 'Software Engineer',
+      company: 'Callibrity',
+      timeline: ['May 2019', 'July 2023 (4 years 2 months)'],
+      achievements: [
+        'Integrated seamlessly with client teams to deliver critical features faster and more reliably.',
+        'Picked up new technologies and languages ad-hoc to meet client needs, demonstrating quickly transferable computer science fundamentals.',
+        'Trained with and worked alongside experts in agile methodology and enterprise product development.',
+      ],
+    },
+    {
+      job: 'Software Engineer',
+      company: 'Crown Equipment',
+      subtitle: 'Contracted via Callibrity',
+      timeline: ['November 2022', 'July 2023 (8 months)'],
+      achievements: [
+        'Migrated frontend from Angular 10 to 14, boosting performance by 54% and enabling a ground-up, accessible rearchitecting of UX with reactive components, accelerating sales ability to answer customer questions from minutes to seconds.',
+        'Developed dynamic error validation system for highly technical user interface with input change side effects capable of handling 100s of rules and edge cases.',
+      ],
+    },
+    {
+      job: 'Software Engineer',
+      company: 'Amano McGann',
+      subtitle: 'Contracted via Callibrity',
+      timeline: ['January 2022', 'October 2023 (10 months)'],
+      achievements: [
+        'Collaborated with hardware engineers to deliver cloud-configurable IoT parking kiosks used by garage customers and attendants.',
+        'Implemented flow that conditionally handled myriad entry configurations - from hardware camera with AR to RFID to ticketing system - which was able to handle dozens of client-configured discounts and price points.',
+        'Used React and Redux to build kiosk configuration UI with role based access control (RBAC), coupon/ticket printing, physical cash exchange, access groups, and variable time pricing.',
+      ],
+    },
+    {
+      job: 'Software Engineer',
+      company: 'Kroger',
+      subtitle: 'Contracted via Callibrity',
+      timeline: ['November 2019', 'December 2021 (2 years 1 month)'],
+      achievements: [
+        'Created high priority telehealth and drive thru scheduling flows using React in 2 weeks to aid in COVID response.',
+        'Built a zero deploy vaccine scheduling chatbot with rapidly changing, county-specific logic. It served 30 million users by facilitating 2 million vaccinations in the first half of 2021. This solution saved Kroger ~$1,500,000/month on SaaS fees',
+        'Developed a generic scheduler framework library using TypeScript and React, empowering the team to build any type of healthcare scheduler the business asked for.',
+      ],
+    },
+    {
+      job: 'Software Engineer',
+      company: 'Thinkware',
+      subtitle: 'Contracted via Callibrity',
+      timeline: ['May 2019', 'November 2019 (6 months)'],
+      achievements: [
+        'Developed next-gen product prototype with React and MaterialUI capable of responsively rendering 1000s of employee payroll records.',
+        'Saved time and resources by creating a powerful table component with advanced filtering, column/row reordering, virtualization, and bulk actions.',
+      ],
+    },
+    {
+      job: 'Software Engineering Intern',
+      company: 'Blizzard Entertainment',
+      timeline: ['May 2017', 'August 2017 (4 months)'],
+      achievements: [
+        'Learned cornerstone agile practices while building features for the Overwatch website using React, Redux, and Spring Boot REST API.',
+        'Led design and implementation of 2017 Summer Games event page, including sticky video component and cross browser parallax animation.',
+        'Created mobile-first, filterable maps section for Game Overview page.',
+      ],
+    },
+  ],
+  educationTitle: 'Education',
+  education: [
+    {
+      school: 'Rochester Institute of Technology',
+      degree: 'Bachelor of Science: Game Design and Development',
+      timeline: ['August 2015', 'May 2019'],
+      description: 'Graduated <em>summa cum laude</em>.',
+    },
+  ],
+};
+---
+
+<ArticleLayout>
+  <header
+    class='bg-primary text-on-primary flex flex-col p-8 xl:-mx-12 xl:px-12 xl:pt-12'
+  >
+    <h1 class='-mt-2 font-bold'>{resume.name}</h1>
+    <p class='text-4xl'>{resume.position}</p>
+    {
+      resume.stats.map((nextStat) => (
+        <p class='mt-2'>
+          <strong>{nextStat.label}</strong>:
+          {nextStat.href !== undefined ?
+            <a href={nextStat.href} target='_blank'>
+              {nextStat.value}
+            </a>
+          : nextStat.value}
+        </p>
+      ))
+    }
+  </header>
+  <div class='px-8 py-8 xl:px-0'>
+    <p class='text-xl leading-[1.5]'>
+      {resume.summary}
+    </p>
+    <h2 class='mt-4'>{resume.skillsTitle}</h2>
+    {
+      resume.skills.map((nextSkill) => (
+        <p class='mt-2'>
+          <strong>{nextSkill.label}</strong> &ndash; {nextSkill.value}
+        </p>
+      ))
+    }
+    <h2>{resume.experienceTitle}</h2>
+    {
+      resume.experience.map((nextExperience, i) => (
+        <div class:list={['mt-2', { 'mt-6': i > 0 }]}>
+          <h3>
+            {nextExperience.job} &ndash; {nextExperience.company}
+          </h3>
+          <p class='mt-1'>
+            <em class='text-text-lighten-1'>
+              {nextExperience.timeline[0]} &ndash; {nextExperience.timeline[1]}
+            </em>
+          </p>
+          {nextExperience.subtitle !== undefined && (
+            <p>
+              <em class='text-text-lighten-2'>{nextExperience.subtitle}</em>
+            </p>
+          )}
+          <ul>
+            {nextExperience.achievements.map((nextAchievement) => (
+              <li>{nextAchievement}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+    <h2>{resume.educationTitle}</h2>
+    {
+      resume.education.map((nextEducation, i) => (
+        <div class:list={['mt-2', { 'mt-6': i > 0 }]}>
+          <h3>
+            {nextEducation.school}
+          </h3>
+          <h4 class="text-3xl">
+            {nextEducation.degree}
+          </h4>
+          <p class='mt-1'>
+            <em class='text-text-lighten-1'>
+              {nextEducation.timeline[0]} &ndash; {nextEducation.timeline[1]}
+            </em>
+          </p>
+          <p>
+            <Fragment set:html={nextEducation.description} />
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</ArticleLayout>

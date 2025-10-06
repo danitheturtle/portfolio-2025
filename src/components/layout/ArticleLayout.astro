@@ -6,12 +6,12 @@ import '@/styles/main.css';
 <!doctype html>
 <html>
   <head>
-    <meta name='color-scheme' content="dark light" />
+    <meta name='color-scheme' content='dark light' />
     <slot name='head' />
   </head>
   <body class='themeRoot surface'>
     <div class='bg-primary text-on-primary h-12 w-full'>
-      <div class='mx-auto max-w-6xl flex flex-row justify-between'>
+      <div class='mx-auto max-w-lg flex flex-row justify-between'>
         <nav>
           <a href='/' class="btn">Home</a>
           <a href='/projects' class="btn">Projects</a>
@@ -20,7 +20,7 @@ import '@/styles/main.css';
         <ThemeSelector />
       </div>
     </div>
-    <div class='mx-auto max-w-6xl'>
+    <div class='mx-auto max-w-lg'>
       <slot />
     </div>
   </body>
